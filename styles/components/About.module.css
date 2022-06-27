@@ -1,0 +1,243 @@
+.about_screen {
+  width: 100%;
+  padding: 130px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about_screen__left {
+  width: 590px;
+  position: relative;
+}
+
+.about_screen__text {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 120%;
+
+  /* or 43px */
+
+  color: #F5F5F5;
+}
+
+.about_screen__line {
+  width: 590px;
+  height: 0;
+  border: 1px solid #3D3D3D;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.about_screen__line_down {
+  width: 590px;
+  height: 0;
+  border: 1px solid #3D3D3D;
+  margin-top: -5px;
+  margin-bottom: 20px;
+}
+
+.skils_table {
+  display: flex;
+  width: 590px;
+  justify-content: space-between;
+}
+
+.skils_table__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.about_screen__right {
+  width: calc(100% - 590px);
+  position: relative;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.skils_table__column_title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+
+  /* identical to box height */
+  text-transform: capitalize;
+  margin-bottom: 5px;
+
+  color: #F5F5F5;
+}
+
+.about_screen__photo {
+  width: 480px;
+  height: 480px;
+
+  background-position: top center;
+  background-size: cover;
+}
+
+.skils_table__column_item {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+
+  /* identical to box height */
+  text-transform: capitalize;
+
+  color: #A6A6A6;
+}
+
+.about_screen__skills_title {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 120%;
+
+  text-transform: capitalize;
+
+  color: #3D3D3D;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.about_screen__company_list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 47px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.about_screen__company_list__item {
+  font-family: 'Urbanist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 120%;
+
+  color: #F5F5F5;
+}
+
+.about_screen__company_title {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 120%;
+
+  letter-spacing: 0.08em;
+  text-transform: capitalize;
+
+  color: #3D3D3D;
+  position: absolute;
+  margin-top: -10px;
+  right: 0;
+}
+
+@media screen and (min-width: 1481px) {
+  .about_screen__photo {
+    width: 580px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .about_screen__company_list_tablet {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 1410px) {
+  .about_screen__photo {
+    width: 380px;
+  }
+  
+  .about_screen__company_list__item {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 1245px) {
+
+  .about_screen__company_list__item {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+  
+    color: #F5F5F5;
+    margin-top: 15px;
+  }
+
+  .about_screen__company_list_tablet {
+    margin-left: 25px;
+  }
+
+  .about_screen {
+    flex-direction: column;
+    padding: 130px;
+  }
+
+  .about_screen__left {
+    width: 100%;
+  }
+
+  .about_screen__line {
+    width: 100%;
+  }
+
+
+  .about_screen__line_down {
+    width: 100%;
+  }
+
+  .about_screen__right {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .about_screen__company_list_tablet {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 60px;
+  }
+
+  .about_screen__company_title_tablet {
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 120%;
+    letter-spacing: 0.08em;
+    text-transform: capitalize;
+    color: #3D3D3D;
+  }
+
+  .about_screen__company_list {
+    display: none;
+  }
+
+  .about_screen__photo {
+    width: 418.25px;
+  }
+  .skils_table {
+    width: 100%;
+    padding-right: 20px;
+  }
+}
+
+
+@media screen and (max-width: 857px) {
+
+}

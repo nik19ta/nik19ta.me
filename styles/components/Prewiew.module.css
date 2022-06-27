@@ -1,0 +1,217 @@
+.main_screen {
+  margin-left: 130px;
+  margin-right: 130px;
+
+  position: relative;
+  height: 702px;
+}
+
+.main_screen__line {
+  position: absolute;
+  border: 1px solid #3D3D3D;
+}
+
+.main_screen__line_top {
+  width: 88%;
+  height: 0px;
+  left: 8%;
+  top: 6px;
+}
+
+.main_screen__line_left {
+  height: 180px;
+  width: 0px;
+  left: 0px;
+  top: 65px;
+}
+
+.main_screen__line_right_top {
+  height: 180px;
+  width: 0px;
+  right: 0px;
+  top: 65px;
+}
+
+.main_screen__line_right_bottom {
+  height: 190px;
+  width: 0px;
+  right: 0px;
+  top: 455px;
+}
+
+.full_name {
+  margin-top: 0px;
+}
+
+.image_back {
+  background-image: url("../../images/main_back.png");
+  background-size: cover;
+  background-position: top;
+
+  width: 410px;
+  height: 702px;
+
+  position: absolute;
+  top: -58px;
+  left: 130px;
+
+  z-index: -1;
+}
+
+.prewiew_text {
+  width: 778px;
+  height: 200px;
+
+  position: absolute;
+  left: 220px;
+  top: 150px;
+}
+
+.prewiew_text__small {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 84px;
+
+  color: #A6A6A6;
+}
+
+.prewiew_text__large {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 144px;
+  line-height: 189px;
+
+  /* identical to box height */
+
+  color: #F5F5F5;
+  margin-top: -10px;
+}
+
+.quote {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+
+  /* or 29px */
+
+  color: #F5F5F5;
+
+  position: absolute;
+  left: 555px;
+  top: 475px;
+}
+
+.btn_to_portfolio {
+  width: 319px;
+  height: 63px;
+  top: 639px;
+
+  background: #F5F5F5;
+  border: none;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+
+  color: #121212;
+
+  position: absolute;
+  left: 555px;
+  top: 580px;
+
+  cursor: pointer;
+}
+
+.icons_social_media {
+  position: absolute;
+  right: -9px;
+  top: 275px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.flipped_over_text {
+  transform: rotate(-90deg);
+
+  position: absolute;
+  left: -195px;
+  top: 190px;
+
+  width: 600px;
+}
+
+
+.flipped_over_text__grey {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 116px;
+
+  color: #3D3D3D;
+}
+
+@media screen and (max-width: 1000px) {
+  .main_screen {
+    height: 610px;
+    margin-left: 55px;
+    margin-right: 55px;
+  }
+
+  .prewiew_text {
+    max-width: 500px;
+  }
+
+  .prewiew_text__small {
+    font-size: 36px;
+    max-width: 100%;
+  }
+
+  .prewiew_text__large {
+    font-size: 82px;
+    line-height: 89px;
+  }
+
+  .quote {
+    left: 225px;
+    top: 355px;
+  }
+
+  .image_back {
+    height: 612px;
+  }
+
+  .flipped_over_text__grey {
+    font-size: 64px;
+    line-height: 64px;
+  }
+
+  .icons__item {
+    width: 23.17px;
+  }
+
+  .main_screen__line_right_top {
+    height: 150px;
+  }
+
+  .main_screen__line_right_bottom {
+    height: 140px;
+    top: 420px;
+  }
+
+  .icons_social_media {
+    top: 235px;
+    right: -12px;
+  }
+}
