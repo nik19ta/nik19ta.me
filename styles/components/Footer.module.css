@@ -104,7 +104,7 @@
   margin-bottom: 20px;
 
   font-family: 'Open Sans';
-  font-style: normal;
+  font-style: normal; 
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
@@ -132,8 +132,12 @@
 /* Планшетная версия  */
 @media screen and (max-width: 1000px) {
   .footer {
-      padding: 0 50px 50px 50px;
-    }
+    padding: 0 50px 50px 50px;
+  }
+
+  .footer__vartical_line {
+    width: calc(100% - 345px);
+  }
 
   .footer_title {
     font-size: 72px;
@@ -232,5 +236,98 @@
     width: 2px;
     height: 300px;
     background-color: #3D3D3D;
+  }
+}
+
+@media screen and (min-width: 710px) {
+  .footer__items_mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .footer__vartical_line {
+      width: calc(100% - 235px);
+      margin-top: 50px;
+    }
+  .footer {
+    padding: 22px;
+  }
+
+  .footer_title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 63px;
+  }
+
+  .footer__items_tablet {
+    display: none;
+  }
+
+  .footer_mobile__title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+
+    text-transform: uppercase;
+
+    color: #F5F5F5;
+    margin-top: 30px;
+  }
+
+  .footer_mobile__sub_title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+
+    text-transform: capitalize;
+  
+    color: #A6A6A6;
+    margin-top: 6px;
+  }
+
+  .footer_mobile__collumns {
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+  }
+
+  .footer__item {
+    width: 65%;
+  }
+  .footer_menu_list {
+    width: 35%;
+    margin-top: 0;
+  }
+
+  .footer_menu_list::before {
+    right: 0px;
+    left: auto;
+    top: -123px;
+    height: 305px;
+  }
+  .footer_menu_list_item {
+    margin-bottom: 22px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .footer__item_text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  .footer__item_icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer__item div {
+    gap: 15px;
   }
 }

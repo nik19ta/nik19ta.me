@@ -97,6 +97,49 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <div className={styles.footer__items_mobile} >
+        <p className={styles.footer_mobile__title} >Никита Хватов</p>
+        <p className={styles.footer_mobile__sub_title} >Middle full-stack Developer</p>
+
+        <div className={styles.footer_mobile__collumns} >
+          <div className={styles.footer__item} >
+            <div>
+              <img className={styles.footer__item_icon} src={footer_mail.src} alt="mail" />
+              <p className={styles.footer__item_text} >hvatov@nik19ta.me</p>
+            </div>
+            <div>
+              <img className={styles.footer__item_icon}  src={footer_instagram.src} alt="instagram" />
+              <p className={styles.footer__item_text} >@nik19ta.me</p>
+            </div>
+            <div>
+              <img className={styles.footer__item_icon} src={footer_github.src} alt="github" />
+              <p className={styles.footer__item_text} >github.com/nik19ta</p>
+            </div>
+            <div>
+              <img className={styles.footer__item_icon}  src={footer_telergamm.src} alt="telergamm" />
+              <p className={styles.footer__item_text} >@nik19ta</p>
+            </div>
+          </div>
+
+          <div className={styles.footer_menu_list} >
+            <Link activeClass="active" to="prewiew" spy={true} smooth={true} offset={-100} duration={300} >
+              <div className={styles.footer_menu_list_item} >Главная</div>
+            </Link>
+            <Link activeClass="active" to="about" spy={true} smooth={true} offset={0} duration={300} >
+              <div className={styles.footer_menu_list_item} >О себе</div>
+            </Link>
+            <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={-100} duration={300} >
+              <div className={styles.footer_menu_list_item} >Портфолио</div>
+            </Link>
+            <Link activeClass="active" to="service" spy={true} smooth={true} offset={-100} duration={300} >
+              <div className={styles.footer_menu_list_item} >Услуги</div>
+            </Link>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   )
 }
