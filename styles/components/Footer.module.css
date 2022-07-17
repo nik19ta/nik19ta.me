@@ -47,6 +47,16 @@
   margin-top: 8px;
 }
 
+.contact_with_me_list {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact_with_me_list div {
+  margin-right: 60px;
+}
+
 .footer__item div {
   display: flex;
   justify-content: flex-start;
@@ -115,8 +125,31 @@
   color: #A6A6A6;
   cursor: pointer;
 }
+@media screen and (max-width: 1254px) {
+  .contact_with_me_list div {
+    margin-right: 30px;
+  }
+}
 
-@media screen and (min-width: 1020px) {
+@media screen and (max-width: 1137px) {
+  .contact_with_me_list {
+    width: auto;
+    margin-left: 40px;
+    flex-direction: column;
+  }
+
+  .footer_menu_list {
+    margin-top: 20px;
+  }
+
+  .footer_menu_list::before {
+    margin-top: 20px;
+    height: 260px;
+    top: -120px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
   .footer {
     padding: 60px;
   }

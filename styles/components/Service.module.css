@@ -71,7 +71,7 @@
   height: 0;
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (max-width: 1020px) {
   .service_screen {
     padding: 60px;
   }

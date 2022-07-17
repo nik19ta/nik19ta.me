@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
           <h1 className={styles.footer__item_name} >Никита Хватов</h1>
           <p className={styles.footer__item_developer} >Middle full-stack Developer</p>
         </div>
-        <div className={styles.footer__item} >
+        <div className={`${styles.footer__item} ${styles.contact_with_me_list}`} >
           <div>
             <img className={styles.footer__item_icon} src={footer_mail.src} alt="mail" />
             <p className={styles.footer__item_text} >hvatov@nik19ta.me</p>
