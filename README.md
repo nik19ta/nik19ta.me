@@ -12,7 +12,7 @@ Tools
 
 <br />
 
-- You [site](https://nik19ta.github.io/) on github pages
+- You can wiew [site](https://nik19ta.github.io/nik19ta.me/) on github pages
 - You can wiew figma (image - link)
 
 [![wiew figma](./README/figma.png)](https://www.figma.com/file/NKcx7nhqQJoVLYecFC9USK/nik19ta.me)
