@@ -340,9 +340,10 @@
   .footer_menu_list::before {
     right: 0px;
     left: auto;
-    top: -123px;
-    height: 305px;
+    top: -144px;
+    height: 265px;
   }
+
   .footer_menu_list_item {
     margin-bottom: 22px;
     font-weight: 400;

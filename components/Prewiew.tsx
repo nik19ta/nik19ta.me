@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react"
+import * as React from "react";
 
 import styles from '../styles/components/Prewiew.module.css'
 
@@ -22,15 +22,29 @@ const Prewiew: React.FC = () => {
 
       <Menu />
 
-      <div className={styles.flipped_over_text} >
-        <p className={styles.flipped_over_text__grey} >Middle <br /> Developer</p>
+      <div className={`${styles.flipped_over_text__desktop} ${styles.flipped_over_text}`} >
+        <p className={styles.flipped_over_text__grey} >Middle <br /> 
+          {"Developer".split("").map(item => (
+            <span className={styles.half_color} key={item} id={item} >{item}</span>
+          ))}
+        </p>
+      </div>
+
+      <div className={`${styles.flipped_over_text__mobile} ${styles.flipped_over_text}`} >
+        <p className={styles.flipped_over_text__grey} >
+          {"Middle".split("").map(item => (
+            <span className={styles.half_color} key={item} id={item} >{item}</span>
+          ))}
+          <br /> 
+          Developer
+        </p>
       </div>
 
       <div className={styles.image_back} ></div>
 
       <div className={styles.prewiew_text} >
         <p className={styles.prewiew_text__small} >Full-stack</p>
-        <p className={styles.prewiew_text__large} >Developer</p>
+        <p className={styles.prewiew_text__large} > Developer </p>
       </div>
 
       <p className={styles.quote} > Моя цель – писать поддерживаемый, <br/> чистый и понятный код, чтобы процесс <br/> разработки был приятным.</p>

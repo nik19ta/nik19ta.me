@@ -87,6 +87,22 @@
   margin-top: -10px;
 }
 
+.half_color {
+  position: relative;
+  display: inline-block;
+  color: #a6a5a5;
+}
+
+.half_color:before {
+  content: attr(id);
+  color: #3d3d3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 68%;
+  overflow: hidden;
+}
+
 .quote {
   font-family: 'Open Sans';
   font-style: normal;
@@ -212,7 +228,16 @@
   }
 }
 
+@media screen and (min-width: 840px) {
+  .flipped_over_text__mobile {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 840px) {
+  .flipped_over_text__desktop {
+    display: none;
+  }
   .main_screen {
     height: 720px;
     margin-left: 0;
@@ -282,7 +307,7 @@
 
   .flipped_over_text {
     left: auto;
-    right: -82px;
+    right: -80px;
     bottom: 416px;
   }
 

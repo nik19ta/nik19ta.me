@@ -71,7 +71,14 @@ const About = () => {
         </div>
 
         <div className={styles.about_screen__right}>
-          <div className={styles.about_screen__photo} style={{backgroundImage: `url(${nikita_khvatov.src})`}} ></div>
+
+          <div className={styles.about_screen__photo} style={{backgroundImage: `url(${nikita_khvatov.src})`}} >
+            <p className={styles.about_screen__photo_text} >
+              {"Middle full-stack".split("").map(item => (
+                <span className={styles.half_color} key={item} id={item} >{item}</span>
+              ))}
+            </p>
+          </div>
 
           <div className={styles.about_screen__company_list_tablet} >
             <span className={styles.about_screen__company_title_tablet}>Company</span>

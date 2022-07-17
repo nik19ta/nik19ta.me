@@ -71,12 +71,46 @@
   color: #F5F5F5;
 }
 
+.half_color {
+  position: relative;
+  display: inline-block;
+  color: #a6a5a5;
+}
+
+.half_color:before {
+  content: attr(id);
+  color: #3d3d3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 68%;
+  overflow: hidden;
+}
+
 .about_screen__photo {
   width: 480px;
   height: 480px;
 
   background-position: top center;
   background-size: cover;
+
+  position: relative;
+}
+
+.about_screen__photo_text {
+  position: absolute;
+  left: -150.7px;
+  top: 318px;
+
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 120%;
+
+  color: #3D3D3D;
+
+  transform: rotate(-90deg);
 }
 
 .skils_table__column_item {
@@ -86,7 +120,7 @@
   font-size: 18px;
   line-height: 25px;
 
-  /* identical to box height */
+  margin-top: 10px;
   text-transform: capitalize;
 
   color: #A6A6A6;
@@ -123,7 +157,6 @@
   font-weight: 400;
   font-size: 36px;
   line-height: 120%;
-
   color: #F5F5F5;
 }
 
@@ -258,6 +291,11 @@
 }
 
 @media screen and (max-width: 804px) {
+  .about_screen__photo_text {
+    left: -150.7px;
+    top: 240px;
+  }
+
   .about_screen__text {
     font-family: 'Open Sans';
     font-style: normal;
