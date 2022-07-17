@@ -8,28 +8,28 @@
 
 .main_screen__line {
   position: absolute;
-  border: 1px solid #3D3D3D;
+  border: 1px solid #282828;
 }
 
 .main_screen__line_top {
-  width: 88%;
+  width: calc(90% - 50px);
   height: 0px;
-  left: 8%;
-  top: 6px;
+  left: 10%;
+  top: 72px;
 }
 
 .main_screen__line_left {
-  height: 180px;
+  height: 210px;
   width: 0px;
   left: 0px;
-  top: 65px;
+  top: 72px;
 }
 
 .main_screen__line_right_top {
   height: 180px;
   width: 0px;
   right: 0px;
-  top: 65px;
+  top: 75px;
 }
 
 .main_screen__line_right_bottom {
@@ -53,18 +53,15 @@
 
   position: absolute;
   top: -58px;
-  left: 130px;
+  left: 153px;
 
   z-index: -1;
 }
 
 .prewiew_text {
-  width: 778px;
-  height: 200px;
-
   position: absolute;
-  left: 220px;
-  top: 150px;
+  left: 302px;
+  top: 160px;
 }
 
 .prewiew_text__small {
@@ -97,13 +94,11 @@
   font-size: 24px;
   line-height: 120%;
 
-  /* or 29px */
-
-  color: #F5F5F5;
+  color: #e3e3e3;
 
   position: absolute;
-  left: 555px;
-  top: 475px;
+  left: 585px;
+  top: 465px;
 }
 
 .btn_to_portfolio {
@@ -123,7 +118,7 @@
   color: #121212;
 
   position: absolute;
-  left: 555px;
+  left: 585px;
   top: 580px;
 
   cursor: pointer;
@@ -145,8 +140,9 @@
   transform: rotate(-90deg);
 
   position: absolute;
-  left: -195px;
-  top: 190px;
+  left: -210px;
+  top: auto;
+  bottom: 260px;
 
   width: 600px;
 }
@@ -157,61 +153,168 @@
   font-style: normal;
   font-weight: 500;
   font-size: 96px;
-  line-height: 116px;
+  line-height: 92px;
 
   color: #3D3D3D;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1365px) {
+  .prewiew_text {
+    left: auto;
+    right: 40px;
+  }
+}
+
+@media screen and (max-width: 1330px) {
+  .quote {
+    left: auto;
+    right: 40px;
+  }
+  .btn_to_portfolio {
+    left: auto;
+    right: 185px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .prewiew_text__small {
+    font-size: 36px;
+    line-height: 47px;
+  }
+  .prewiew_text__large {
+    font-size: 82px;
+    line-height: 108px;
+  }
+  .prewiew_text {
+    right: 90px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
   .main_screen {
     height: 610px;
     margin-left: 55px;
     margin-right: 55px;
   }
 
-  .prewiew_text {
-    max-width: 500px;
-  }
-
-  .prewiew_text__small {
-    font-size: 36px;
-    max-width: 100%;
-  }
-
-  .prewiew_text__large {
-    font-size: 82px;
-    line-height: 89px;
-  }
-
-  .quote {
-    left: 225px;
-    top: 355px;
-  }
-
-  .image_back {
-    height: 612px;
-  }
-
   .flipped_over_text__grey {
     font-size: 64px;
-    line-height: 64px;
+    line-height: 84px;
   }
 
-  .icons__item {
-    width: 23.17px;
+  .flipped_over_text {
+    bottom: 178px;
   }
 
-  .main_screen__line_right_top {
-    height: 150px;
+  .main_screen__line_left {
+    height: 350px;
+    left: -220px;
   }
+}
 
-  .main_screen__line_right_bottom {
-    height: 140px;
-    top: 420px;
+@media screen and (max-width: 840px) {
+  .main_screen {
+    height: 720px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .icons_social_media {
-    top: 235px;
-    right: -12px;
+    right: 25px;
+  }
+
+  .main_screen__line_top {
+    top: 42px;
+    left: 190px;
+    width: calc(100% - 270px);
+  }
+
+  .main_screen__line_right_top, .main_screen__line_right_bottom {
+    right: 34px;
+  }
+
+  .main_screen__line_right_top {
+    top: 135px;
+    height: 120px;
+  }
+
+  .main_screen__line_right_bottom {
+    height: 250px;
+  }
+
+  .image_back {
+    right: 0;
+    left: auto;
+    width: 236px;
+    height: 610px;
+    background-position: -20px;
+  }
+
+  .quote {
+    left: 22px;
+    top: 580px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 120%;
+  }
+  
+  .btn_to_portfolio {
+    left: 22px;
+    top: 660px;
+
+    width: 227px;
+    height: 45px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .prewiew_text {
+    right: auto;
+    left: -160px;
+    
+    width: auto;
+    max-width: none;
+
+    transform: rotate(90deg);
+    padding-left: 34px;
+  }
+
+  .flipped_over_text {
+    left: auto;
+    right: -82px;
+    bottom: 416px;
+  }
+
+  .flipped_over_text__grey {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 50px;
+  }
+
+  .prewiew_text__small {
+    font-size: 42px;
+  }
+
+  .prewiew_text__large {
+    font-size: 85px;
+  }
+
+  .main_screen__line_left {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .quote {
+    font-size: 15px;
+  }
+
+  .btn_to {
+    top: 650px;
+    width: 202px;
+    height: 36px;
+    font-size: 16px;
+    line-height: 25px;
   }
 }

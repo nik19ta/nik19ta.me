@@ -238,6 +238,9 @@
 }
 
 
-@media screen and (max-width: 857px) {
-
+@media screen and (max-width: 1020px) {
+  .about_screen {
+    padding: 60px;
+    margin-top: 40px;
+  }
 }

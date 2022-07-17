@@ -71,6 +71,12 @@
   height: 0;
 }
 
+@media screen and (min-width: 1020px) {
+  .service_screen {
+    padding: 60px;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .service_screen__items_tablet {
     display: none;
