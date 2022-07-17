@@ -80,6 +80,11 @@ const About = () => {
             <span className={styles.about_screen__company_list__item}> Qiwi </span>
             <span className={styles.about_screen__company_list__item}> ItHub </span>
             <span className={styles.about_screen__company_list__item}> VkDevLab </span>
+
+            <div className={styles.about_screen__company_list__last_item} >
+              <div className={styles.about_screen__company_list__line} ></div>
+              <div className={styles.about_screen__company_list__text} >Company</div>
+            </div>
           </div>
         </div>
 
