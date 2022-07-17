@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       <Prewiew />
       <About />
       {/* <Portfolio /> */}
-      {/* <Service /> */}
+      <Service />
       {/* <Footer /> */}
     </div>
   )
