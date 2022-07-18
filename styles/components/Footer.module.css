@@ -48,7 +48,7 @@
 }
 
 .contact_with_me_list {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -76,6 +76,8 @@
   text-transform: lowercase;
 
   color: #F5F5F5;
+  text-decoration: none;
+  width: 195px;
 }
 
 .footer__top_line {

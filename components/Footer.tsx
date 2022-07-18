@@ -11,6 +11,34 @@ import footer_telergamm from "../images/footer/telergamm.svg"
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const Footer: React.FC = () => {
+
+  const linkContactsWithMe = [
+    {
+      link: "mailto:nik19ta.me@gmail.com",
+      text: "nik19ta.me@gmail.com",
+      icon: footer_mail,
+      alt: "mail"
+    },
+    {
+      link: "https://www.instagram.com/nik19ta.me/",
+      text: "@nik19ta.me",
+      icon: footer_instagram,
+      alt: "instagram"
+    },
+    {
+      link: "https://github.com/nik19ta/",
+      text: "github.com/nik19ta",
+      icon: footer_github,
+      alt: "github"
+    },
+    {
+      link: "https://t.me/nik19ta",
+      text: "@nik19ta",
+      icon: footer_telergamm,
+      alt: "telergamm"
+    },
+  ]
+
   return (
     <div id="concatcs" className={styles.footer} >
       <div className={styles.footer__top_line} >
@@ -24,22 +52,12 @@ const Footer: React.FC = () => {
           <p className={styles.footer__item_developer} >Middle full-stack Developer</p>
         </div>
         <div className={`${styles.footer__item} ${styles.contact_with_me_list}`} >
-          <div>
-            <img className={styles.footer__item_icon} src={footer_mail.src} alt="mail" />
-            <p className={styles.footer__item_text} >hvatov@nik19ta.me</p>
-          </div>
-          <div>
-            <img className={styles.footer__item_icon}  src={footer_instagram.src} alt="instagram" />
-            <p className={styles.footer__item_text} >@nik19ta.me</p>
-          </div>
-          <div>
-            <img className={styles.footer__item_icon} src={footer_github.src} alt="github" />
-            <p className={styles.footer__item_text} >github.com/nik19ta</p>
-          </div>
-          <div>
-            <img className={styles.footer__item_icon}  src={footer_telergamm.src} alt="telergamm" />
-            <p className={styles.footer__item_text} >@nik19ta</p>
-          </div>
+          {linkContactsWithMe.map(item => (
+            <div key={item.alt} >
+              <img className={styles.footer__item_icon} src={item.icon.src} alt={item.alt} />
+              <a className={styles.footer__item_text} href={item.link} >{item.text}</a>
+            </div>
+          ))}
         </div>
         <div className={styles.footer__item_menu} >
           <div className={styles.footer_menu_list} >
@@ -79,22 +97,12 @@ const Footer: React.FC = () => {
         </div>
 
         <div className={styles.footer__items_tablet_right}>
-          <div className={styles.footer__items_tablet_right_link} >
-            <img className={styles.footer__item_icon} src={footer_mail.src} alt="mail" />
-            <p className={styles.footer__item_text}>hvatov@nik19ta.me</p>
-          </div>
-          <div className={styles.footer__items_tablet_right_link} >
-            <img className={styles.footer__item_icon} src={footer_instagram.src} alt="instagram" />
-            <p className={styles.footer__item_text}>@nik19ta.me</p>
-          </div>
-          <div className={styles.footer__items_tablet_right_link} >
-            <img className={styles.footer__item_icon} src={footer_github.src} alt="github" />
-            <p className={styles.footer__item_text}>github.com/nik19ta</p>
-          </div>
-          <div className={styles.footer__items_tablet_right_link} >
-            <img className={styles.footer__item_icon} src={footer_telergamm.src} alt="telergamm" />
-            <p className={styles.footer__item_text}>@nik19ta</p>
-          </div>
+        {linkContactsWithMe.map(item => (
+            <div key={item.alt} className={styles.footer__items_tablet_right_link} >
+              <img className={styles.footer__item_icon} src={item.icon.src} alt={item.alt} />
+              <a href={item.link} className={styles.footer__item_text}>{item.text}</a>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -104,22 +112,12 @@ const Footer: React.FC = () => {
 
         <div className={styles.footer_mobile__collumns} >
           <div className={styles.footer__item} >
-            <div>
-              <img className={styles.footer__item_icon} src={footer_mail.src} alt="mail" />
-              <p className={styles.footer__item_text} >hvatov@nik19ta.me</p>
+          {linkContactsWithMe.map(item => (
+            <div key={item.alt} >
+              <img className={styles.footer__item_icon} src={item.icon.src} alt={item.alt} />
+              <a href={item.link} className={styles.footer__item_text} >{item.text}</a>
             </div>
-            <div>
-              <img className={styles.footer__item_icon}  src={footer_instagram.src} alt="instagram" />
-              <p className={styles.footer__item_text} >@nik19ta.me</p>
-            </div>
-            <div>
-              <img className={styles.footer__item_icon} src={footer_github.src} alt="github" />
-              <p className={styles.footer__item_text} >github.com/nik19ta</p>
-            </div>
-            <div>
-              <img className={styles.footer__item_icon}  src={footer_telergamm.src} alt="telergamm" />
-              <p className={styles.footer__item_text} >@nik19ta</p>
-            </div>
+          ))}
           </div>
 
           <div className={styles.footer_menu_list} >

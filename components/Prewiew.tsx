@@ -7,12 +7,36 @@ import Menu from '../components/Menu'
 
 import github from  "../images/social_media/github.svg"
 import linkedin from  "../images/social_media/linkedin.svg"
-import vk from  "../images/social_media/vk.svg"
 import instagram from  "../images/social_media/instagram.svg"
 import telegramm from  "../images/social_media/telegramm.svg"
+import { Link } from "react-scroll";
 
 
 const Prewiew: React.FC = () => {
+
+  const linkContactsWithMe = [
+    {
+      link: "https://github.com/nik19ta/",
+      icon: github,
+      alt: "github"
+    },
+    {
+      link: "https://www.linkedin.com/in/nikita-khvatov-b9a780245/",
+      icon: linkedin,
+      alt: "linkedin"
+    },
+    {
+      link: "https://www.instagram.com/nik19ta.me/",
+      icon: instagram,
+      alt: "instagram"
+    },
+    {
+      link: "https://t.me/nik19ta",
+      icon: telegramm,
+      alt: "telergamm"
+    },
+  ]
+
   return (
     <div id="prewiew" className={styles.main_screen} >  
       <div className={`${styles.main_screen__line} ${styles.main_screen__line_left}`} ></div>
@@ -49,14 +73,18 @@ const Prewiew: React.FC = () => {
 
       <p className={styles.quote} > Моя цель – писать поддерживаемый, <br/> чистый и понятный код, чтобы процесс <br/> разработки был приятным.</p>
 
-      <button className={styles.btn_to_portfolio} >Смотреть портфолио</button>
+      <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={10} duration={300} >
+        <button className={styles.btn_to_portfolio} >Смотреть портфолио</button>
+      </Link>
 
       <div className={styles.icons_social_media} >
-        <div className={styles.icons__item} > <img src={github.src} alt="github" /> </div>
-        <div className={styles.icons__item} > <img src={linkedin.src} alt="linkedin" /> </div>
-        <div className={styles.icons__item} > <img src={vk.src} alt="vk" /> </div>
-        <div className={styles.icons__item} > <img src={instagram.src} alt="instagram" /> </div>
-        <div className={styles.icons__item} > <img src={telegramm.src} alt="telegramm" /> </div>
+        {linkContactsWithMe.map(item => (
+          <div key={item.alt} className={styles.icons__item} >
+            <a href={item.link} >
+              <img src={item.icon.src} alt={item.alt} />
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   )

@@ -11,41 +11,19 @@ const About = () => {
   const skils = [
     {
       categoryName: "Front-end",
-      names: [
-        "TypeScript",
-        "Redux/toolkit",
-        "React",
-        "ReactNative",
-        "Vue/Vuex",
-        "Ant.d",
-      ]
+      names: "TypeScript, Redux/toolkit, React, ReactNative, Vue/Vuex, Ant.d",
     },
     {
       categoryName: "Back-end",
-      names: [
-        "PostgreSQL/MySql",
-        "MongoDB",
-        "Go/Gin/Gorm",
-        "Node/Express/Nest",
-        "Python/Flask",
-      ]
+      names: "PostgreSQL/MySql, MongoDB, Go/Gin/Gorm, Node/Express/Nest, Python/Flask",
     },
     {
       categoryName: "Tools",
-      names: [
-        "Nginx/Brotly",
-        "GitHub CI/CD",
-        "Git",
-        "Swagger",
-      ]
+      names: "Nginx/Brotly, GitHub CI/CD, Git, Swagger",
     },
     {
       categoryName: "Testing",
-      names: [
-        "Selenium",
-        "Mocha",
-        "jest",
-      ]
+      names: "Selenium, Mocha, jest",
     }
   ]
 
@@ -59,7 +37,7 @@ const About = () => {
             {skils.map((skil_item) => (
               <div key={skil_item.categoryName} className={styles.skils_table__column}>
                 <span className={styles.skils_table__column_title}>{skil_item.categoryName}</span>
-                {skil_item.names.map((name) => (
+                {skil_item.names.split(",").map((name) => (
                   <span key={name} className={styles.skils_table__column_item}>{name}</span>
                 ))}
               </div>

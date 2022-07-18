@@ -142,14 +142,18 @@
 
 .icons_social_media {
   position: absolute;
-  right: -9px;
-  top: 275px;
+  right: -12px;
+  top: 280px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+}
+
+.icons__item a img {
+  width: 24px;
 }
 
 .flipped_over_text {
