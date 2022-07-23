@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p,
+span,
+div {
+  color: #fff;
+}
+
+body {
+  background-color: #121212;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
