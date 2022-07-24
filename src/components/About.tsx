@@ -6,8 +6,10 @@ import nikita_khvatov from "../images/nikita_khvatov_2.png"
 import styles from "../styles/components/About.module.css"
 
 import Anime, {anime} from 'react-anime';
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const {t} = useTranslation();
   // isScrollValueMoreThanHeaderHeight
   const [isvmthh, setIsvmthh] = useState(false);
 
@@ -31,7 +33,7 @@ const About = () => {
   return (
     <div id="about" className={styles.about_screen} >
         <div className={styles.about_screen__left} >
-        <p className={styles.about_screen__text} > Hello! I'm Nikita, <br /> I'm a Middle full-stack developer. <br /> More than 4 years experience. </p>
+        <p className={styles.about_screen__text} > {t('about.hello')} </p>
           <div className={`${isvmthh && styles.about_screen__line}`}></div>
           <div className={styles.skils_table}>
 

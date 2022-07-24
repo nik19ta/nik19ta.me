@@ -5,6 +5,7 @@ import styles from "../styles/components/Portfolio.module.css"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { portfolioData } from "../utils/portfolio"
+import { useTranslation } from "react-i18next"
 
 interface PortfolioItem {
   id: string
@@ -20,6 +21,8 @@ interface CategoryItem {
 }
 
 const Portfolio: React.FC = () => {
+  const {t} = useTranslation();
+  
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -35,23 +38,19 @@ const Portfolio: React.FC = () => {
     show: { opacity: 1 }
   }
   
-
-  
   const [activeTab, setActiveTab] = useState(-1)
-  const [categories, setCategories] = useState([] as CategoryItem[])
-  const [portfolio, setPortfolio] = useState([] as PortfolioItem[])
+
+  const portfolio = portfolioData
+  const categories = [
+    { id: 1, title: t("portfolio.all_projects") },
+    { id: 2, title: "WEB" },
+    { id: 4, title: "MOBILE" },
+    { id: 3, title: "BOT" },
+  ]
 
   const [limit, setLimit] = useState(4)
 
   useEffect(() => {
-    setCategories([
-      { id: 1, title: "ALL PROJECTS" },
-      { id: 2, title: "WEB" },
-      { id: 4, title: "MOBILE" },
-      { id: 3, title: "BOT" },
-    ])
-
-    setPortfolio(portfolioData)
     setActiveTab(1)
   }, [])
 
@@ -87,8 +86,8 @@ const Portfolio: React.FC = () => {
       </motion.ul>
 
       <div className={styles.portfolio_screen__show_more_container}>
-        {limit == 4 && <button className={styles.portfolio_screen__show_more} onClick={() => setLimit(10)} > Show more </button>}
-        {limit > 4 && <button className={styles.portfolio_screen__show_more} onClick={() => setLimit(4)} > Show less </button>}
+        {limit == 4 && <button className={styles.portfolio_screen__show_more} onClick={() => setLimit(10)} > {t('portfolio.show_more')} </button>}
+        {limit > 4 && <button className={styles.portfolio_screen__show_more} onClick={() => setLimit(4)} > {t('portfolio.show_less')} </button>}
       </div>
     </div>
   );

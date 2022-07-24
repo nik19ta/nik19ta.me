@@ -10,10 +10,22 @@ import telegramm from  "../images/social_media/telegramm.svg"
 import { Link } from "react-scroll";
 
 import anime from "animejs"
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 // import Typewriter from 'typewriter-effect/dist/core';
 
 const Prewiew: React.FC = () => {
+  const {t, i18n} = useTranslation();
+
+  const [lang, setLang] = useState('EN');
+
+  const chengeLang = (lang: 'en' | 'ru') => {
+    console.log(lang);
+
+    i18n.changeLanguage(lang);
+    setLang(lang);
+  };
 
   const linkContactsWithMe = [
     {
@@ -38,30 +50,6 @@ const Prewiew: React.FC = () => {
     },
   ]
 
-  // React.useEffect(() => {
-  //   new Typewriter('#typewriter_fullstack', {
-  //     strings: 'Full-stack',
-  //     autoStart: true,
-  //     delay: 90,
-  //   });
-
-  //   setTimeout(() => {
-  //     document.querySelector("#typewriter_fullstack")!.innerHTML = "Full-stack"
-  //   }, 1600)
-
-  //   setTimeout(() => {
-  //     new Typewriter('#typewriter_developer', {
-  //       strings: 'Developer',
-  //       autoStart: true,
-  //       delay: 110,
-  //     });
-
-  //     setTimeout(() => {
-  //       document.querySelector("#typewriter_developer")!.innerHTML = "Developer"
-  //     }, 2000)
-  //   }, 1500)
-  // }, [])
-
   React.useEffect(() => {
     setTimeout(() => {
       anime({
@@ -79,7 +67,7 @@ const Prewiew: React.FC = () => {
       <div className={`${styles.main_screen__line} ${styles.main_screen__line_right_top}`} ></div>
       <div className={`${styles.main_screen__line} ${styles.main_screen__line_right_bottom}`} ></div>
 
-      <Menu />
+      <Menu chengeLang={chengeLang} lang={lang} />
 
       <div className={`${styles.flipped_over_text__desktop} ${styles.flipped_over_text}`} >
         <p className={styles.flipped_over_text__grey} >Middle <br /> 
@@ -106,10 +94,10 @@ const Prewiew: React.FC = () => {
         <p className={`${styles.prewiew_text__large} ${styles.line_2} ${styles.anim_typewriter_2}`} id="typewriter_developer" >Developer</p>
       </div>
 
-      <div className={styles.quote} > My goal is to write maintainable, <br/> clean and understandable code to process <br/> development was enjoyable. </div>
+      <div className={styles.quote} > {t('quote')} </div>
 
       <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={10} duration={300} >
-        <button className={styles.btn_to_portfolio} >View portfolio</button>
+        <button className={styles.btn_to_portfolio} >{t('prewiew.view_portfolio')}</button>
       </Link>
 
       <div id="logo" className={styles.icons_social_media} >

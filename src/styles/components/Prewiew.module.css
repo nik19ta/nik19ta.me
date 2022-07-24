@@ -242,6 +242,8 @@
   left: 715px;
   /* top: 465px; */
 
+  max-width: 470px;
+
   overflow: hidden;
 
   animation: quote__animation 1s ease-in-out forwards;

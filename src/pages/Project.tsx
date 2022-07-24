@@ -4,8 +4,10 @@ import { useLocation } from "react-router-dom"
 import { getProjectById } from "../utils/portfolio";
 
 import styles from "../styles/Project.module.css"
+import { useTranslation } from "react-i18next";
 
 const Project: FC = () => {
+  const {t} = useTranslation();
   const location = useLocation()
 
   const id = location.pathname.split("/")[2];
@@ -31,7 +33,7 @@ const Project: FC = () => {
         ))}
       </div>
 
-      <p className={styles.main_features} >Main features</p>
+      <p className={styles.main_features} >{t('portfolio.main_features')}</p>
 
       <ul className={styles.main_features} >
         {project.main_features && project.main_features.map(item => (

@@ -8,8 +8,10 @@ import footer_github from "../images/footer/github.svg"
 import footer_telergamm from "../images/footer/telergamm.svg"
 
 import { Link, animateScroll as scroll } from "react-scroll";
+import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
+  const {t} = useTranslation();
 
   const linkContactsWithMe = [
     {
@@ -61,16 +63,16 @@ const Footer: React.FC = () => {
         <div className={styles.footer__item_menu} >
           <div className={styles.footer_menu_list} >
             <Link activeClass="active" to="prewiew" spy={true} smooth={true} offset={-100} duration={300} >
-              <div className={styles.footer_menu_list_item} >Main</div>
+              <div className={styles.footer_menu_list_item} >{t('menu.main')}</div>
             </Link>
             <Link activeClass="active" to="about" spy={true} smooth={true} offset={0} duration={300} >
-              <div className={styles.footer_menu_list_item} >About</div>
+              <div className={styles.footer_menu_list_item} >{t('menu.about')}</div>
             </Link>
             <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={-100} duration={300} >
-              <div className={styles.footer_menu_list_item} >Portfolio</div>
+              <div className={styles.footer_menu_list_item} >{t('menu.portfolio')}</div>
             </Link>
             <Link activeClass="active" to="service" spy={true} smooth={true} offset={-100} duration={300} >
-              <div className={styles.footer_menu_list_item} >Services</div>
+              <div className={styles.footer_menu_list_item} >{t('menu.services')}</div>
             </Link>
           </div>
         </div>
@@ -78,25 +80,25 @@ const Footer: React.FC = () => {
 
       <div className={styles.footer__items_tablet}>
         <div className={styles.footer__items_tablet_left}>
-          <p className={styles.footer__items_tablet_title} >NIKITA KHVATOV</p>
+          <p className={styles.footer__items_tablet_title} >{t('fullname')}</p>
           <p className={styles.footer__items_tablet_subtitle} >Middle full-stack Developer</p>
 
 
           <div className={styles.footer__items_tablet_menu}>
             <div className={styles.footer__items_tablet_menu_column}>
               <Link activeClass="active" to="prewiew" spy={true} smooth={true} offset={-100} duration={300} >
-                <div className={styles.footer__items_tablet_menu_row}>MAIN</div>
+                <div className={styles.footer__items_tablet_menu_row}>{t('menu.main')}</div>
               </Link>
               <Link activeClass="active" to="about" spy={true} smooth={true} offset={0} duration={300} >
-                <div className={styles.footer__items_tablet_menu_row}>ABOUT</div>
+                <div className={styles.footer__items_tablet_menu_row}>{t('menu.about')}</div>
               </Link>
             </div>
             <div className={styles.footer__items_tablet_menu_column}>
               <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={-100} duration={300} >
-                <div className={styles.footer__items_tablet_menu_row}>PORTFOLIO</div>
+                <div className={styles.footer__items_tablet_menu_row}>{t('menu.portfolio')}</div>
               </Link>
               <Link activeClass="active" to="service" spy={true} smooth={true} offset={-100} duration={300} >
-                <div className={styles.footer__items_tablet_menu_row}>SERVICES</div>
+                <div className={styles.footer__items_tablet_menu_row}>{t('menu.services')}</div>
               </Link>
             </div>
           </div>

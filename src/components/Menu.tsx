@@ -5,24 +5,30 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 import burger from "../images/mobile_menu/burger.svg";
 import close from "../images/mobile_menu/close.svg";
+import { useTranslation } from "react-i18next";
 
-const Menu: React.FC = () => {
+interface IMenu {
+  chengeLang: Function
+  lang: string
+}
+
+const Menu: React.FC<IMenu> = ({chengeLang, lang}) => {
+  const {t} = useTranslation();
 
   const [openedMenu, setOpenedMenu] = useState(false)
 
   const menuList = [
-    { text: "About", id: "about" },
-    { text: "Portfolio", id: "portfolio" },
-    { text: "Services", id: "service" },
-    { text: "Contacts", id: "concatcs" },
+    { text: t('menu.about'), id: "about" },
+    { text: t('menu.portfolio'), id: "portfolio" },
+    { text: t('menu.services'), id: "service" },
+    { text: t('menu.contacts'), id: "concatcs" },
   ];
 
   return (
     <div className={styles.menu}>
       <div className={styles.menu__desktop}>
         <div className={`${styles.menu__item} ${styles.full_name}`}>
-          NIKITA <br />
-          KHVATOV
+          {t("fullname")}
         </div>
 
         <div className={styles.menu__list}>
@@ -42,8 +48,11 @@ const Menu: React.FC = () => {
         </div>
 
         <div className={`${styles.menu__item} ${styles.language_switch}`}>
-          <span className={`${styles.language_switch__item} ${styles.active}`} >
+          <span onClick={() => chengeLang("en")} className={`${styles.language_switch__item} ${lang === "en" && styles.active}`} >
             EN
+          </span>
+          <span onClick={() => chengeLang("ru")} className={`${styles.language_switch__item} ${lang === "ru" && styles.active}`} >
+            RU
           </span>
         </div>
       </div>
