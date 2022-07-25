@@ -176,6 +176,7 @@
     height: 63px;
     font-size: 20px;
     display: flex;
+    padding: 0;
     justify-content: center;
     align-items: center;
   }
