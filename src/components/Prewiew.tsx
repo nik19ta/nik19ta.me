@@ -11,19 +11,33 @@ import { Link } from "react-scroll";
 
 import anime from "animejs"
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
+import useWindowSize from "../hooks/useWindowsSize";
 
 // import Typewriter from 'typewriter-effect/dist/core';
 
+
+
 const Prewiew: React.FC = () => {
   const {t, i18n} = useTranslation();
+  const [width, height] = useWindowSize();
 
-  const [lang, setLang] = useState('EN');
+  const [isTimingFullStack, setIsTimingFullStack] = useState(true)
+  const [isTimingDeveloper, setIsTimingDeveloper] = useState(false)
+  const [showDeveloper, setShowDeveloper] = useState(false)
+
+  const [isAnimatedYet, setiIsAnimatedYet] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {setIsTimingFullStack(false); setIsTimingDeveloper(true); setShowDeveloper(true)}, 1400)
+    setTimeout(() => setIsTimingDeveloper(false), 2800)
+  }, [])
+
+  const [lang, setLang] = useState(localStorage.lang ? localStorage.lang : "en");
 
   const chengeLang = (lang: 'en' | 'ru') => {
-    console.log(lang);
-
     i18n.changeLanguage(lang);
+    localStorage.lang = lang;
     setLang(lang);
   };
 
@@ -50,15 +64,20 @@ const Prewiew: React.FC = () => {
     },
   ]
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
+      console.log(window.innerWidth < 1060 ? window.innerWidth < 810 ? 500 : -298 : -224);
+      
+
       anime({
           targets: `.${styles.icons__item}`,
-          translateX: -298,
+          translateX: window.innerWidth < 1060 ? window.innerWidth < 810 ? 0 : -224 : -298,
           delay: anime.stagger(100, {direction: 'normal'})
         })
-    }, 1300)
-  }, []);
+    setiIsAnimatedYet(true)
+    }, !isAnimatedYet ? 1300 : 0)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [width]);
 
   return (
     <div id="prewiew" className={styles.main_screen} >  
@@ -90,11 +109,11 @@ const Prewiew: React.FC = () => {
       <div className={styles.image_back} ></div>
 
       <div className={styles.prewiew_text} >
-        <p className={`${styles.prewiew_text__small} ${styles.line_1} ${styles.anim_typewriter}`} id="typewriter_fullstack" >Full-stack</p>
-        <p className={`${styles.prewiew_text__large} ${styles.line_2} ${styles.anim_typewriter_2}`} id="typewriter_developer" >Developer</p>
+        <p className={`${styles.prewiew_text__small} ${isTimingFullStack && styles.line_1} ${isTimingFullStack && styles.anim_typewriter}`} id="typewriter_fullstack" >Full-stack</p>
+        {showDeveloper && <p className={`${styles.prewiew_text__large} ${isTimingDeveloper && styles.line_2} ${isTimingDeveloper && styles.anim_typewriter_2}`} id="typewriter_developer" >Developer</p>}
       </div>
 
-      <div className={styles.quote} > {t('quote')} </div>
+      <div className={`${styles.quote} ${width > 810 && styles.animation_quote}`} > {t('quote')} </div>
 
       <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={10} duration={300} >
         <button className={styles.btn_to_portfolio} >{t('prewiew.view_portfolio')}</button>

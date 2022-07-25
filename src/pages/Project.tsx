@@ -18,7 +18,7 @@ const Project: FC = () => {
     <div className={styles.description} >
 
       <div className={styles.header} >
-        <h1>{project.title}</h1>
+        <h1 className={`${project.title.length > 11 && styles.card__title_small}`} >{project.title}</h1>
         <div className={styles.header__line} ></div>
       </div>
 

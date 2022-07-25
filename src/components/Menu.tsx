@@ -48,10 +48,10 @@ const Menu: React.FC<IMenu> = ({chengeLang, lang}) => {
         </div>
 
         <div className={`${styles.menu__item} ${styles.language_switch}`}>
-          <span onClick={() => chengeLang("en")} className={`${styles.language_switch__item} ${lang === "en" && styles.active}`} >
+          <span onClick={() => chengeLang("en")} className={`${styles.language_switch__item} ${lang === "en" ? styles.active : styles.inactive}`} >
             EN
           </span>
-          <span onClick={() => chengeLang("ru")} className={`${styles.language_switch__item} ${lang === "ru" && styles.active}`} >
+          <span onClick={() => chengeLang("ru")} className={`${styles.language_switch__item} ${lang === "ru" ? styles.active : styles.inactive}`} >
             RU
           </span>
         </div>
@@ -94,10 +94,11 @@ const Menu: React.FC<IMenu> = ({chengeLang, lang}) => {
             ))}
 
             <div className={`${styles.menu__item} ${styles.language_switch_mobile}`} >
-              <span
-                className={`${styles.language_switch__item} ${styles.inactive}`}
-              >
+              <span onClick={() => chengeLang("en")} className={`${styles.language_switch__item} ${lang === "en" ? styles.active : styles.inactive}`} >
                 EN
+              </span>
+              <span onClick={() => chengeLang("ru")} className={`${styles.language_switch__item} ${lang === "ru" ? styles.active : styles.inactive}`} >
+                RU
               </span>
             </div>
           </div>

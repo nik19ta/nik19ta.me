@@ -7,10 +7,12 @@ import styles from "../styles/components/About.module.css"
 
 import Anime, {anime} from 'react-anime';
 import { useTranslation } from "react-i18next";
+import useWindowSize from "../hooks/useWindowsSize";
 
 const About = () => {
   const {t} = useTranslation();
   // isScrollValueMoreThanHeaderHeight
+  const [width, height] = useWindowSize();
   const [isvmthh, setIsvmthh] = useState(false);
 
   useEffect(() => {

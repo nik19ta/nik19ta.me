@@ -39,7 +39,7 @@
     width: 0px;
   }
   100% {
-    width: 590px;
+    width: 100%;
   }
 }
 
@@ -60,6 +60,13 @@
   display: flex;
   width: 590px;
   justify-content: space-between;
+}
+
+.skils_table div {
+  width: 50%;
+}
+.skils_table div div {
+  width: 100%;
 }
 
 .skils_table__column {

@@ -80,8 +80,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-top: -15px; */
-  /* margin-right: -1px; */
+  margin-top: 6px;
+  margin-right: -2px;
 }
 
 .language_switch .active {
@@ -93,17 +93,17 @@
   color: #A6A6A6;
 }
 
-@media screen and (min-width: 840px) {
+@media screen and (min-width: 810px) {
   .menu__mobile {
     display: none;
   }
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 810px) {
   .menu__desktop {
     display: none;
   }
-
+  
   .menu__mobile {
     display: flex;
     justify-content: center;
@@ -121,7 +121,6 @@
   .menu {
     justify-content: end;
     width: 100%;
-    padding-right: 30px;
     padding-top: 35px;
   }
 

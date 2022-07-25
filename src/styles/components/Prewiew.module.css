@@ -65,7 +65,7 @@
   height: 0px;
   width: 0px;
   right: 130px;
-  top: 120px;
+  top: 140px;
 
   -webkit-animation: increase_third 1.5s;
   -moz-animation:    increase_third 1.5s; 
@@ -80,7 +80,7 @@
     height: 0px;
   }
   100% {
-    height: 140px;
+    height: 120px;
   }
 }
 
@@ -124,9 +124,6 @@
 
   z-index: -1;
 
-  -webkit-animation: image_back_amination 2s;
-  -moz-animation:    image_back_amination 2s; 
-  -o-animation:      image_back_amination 2s; 
   animation:         image_back_amination 2s; 
   animation-fill-mode: forwards;
 }
@@ -161,7 +158,7 @@
 }
 
 .anim_typewriter_2 {
-  animation: typewriter_2 1s steps(9) 1.2s 1 normal both, blinkTextCursor 800ms steps(9) infinite normal ;
+  animation: typewriter_2 1s steps(9) 0.2s 1 normal both, blinkTextCursor 800ms steps(9) infinite normal ;
 }
 
 @keyframes typewriter{
@@ -240,12 +237,13 @@
 
   position: absolute;
   left: 715px;
-  /* top: 465px; */
 
   max-width: 470px;
-
   overflow: hidden;
 
+}
+
+.animation_quote {
   animation: quote__animation 1s ease-in-out forwards;
 }
 
@@ -282,9 +280,6 @@
 
   cursor: pointer;
 
-  -webkit-animation: btn_to_portfolio_animatoin 2s;
-  -moz-animation:    btn_to_portfolio_animatoin 2s; 
-  -o-animation:      btn_to_portfolio_animatoin 2s; 
   animation:         btn_to_portfolio_animatoin 2s; 
   animation-fill-mode: forwards;
 
@@ -362,18 +357,18 @@
 @media screen and (max-width: 1365px) {
   .prewiew_text {
     left: auto;
-    right: 40px;
+    right: 170px;
   }
 }
 
 @media screen and (max-width: 1330px) {
   .quote {
     left: auto;
-    right: 40px;
+    right: 170px;
   }
   .btn_to_portfolio {
     left: auto;
-    right: 185px;
+    right: 319px;
   }
 }
 
@@ -387,16 +382,30 @@
     line-height: 108px;
   }
   .prewiew_text {
-    right: 90px;
+    right: 190px;
     min-width: 442px;
   }
 }
 
 @media screen and (max-width: 1060px) {
   .main_screen {
-    height: 610px;
+    height: 660px;
     padding-left: 55px;
     padding-right: 55px;
+  }
+
+  .main_screen__line_left {
+    left: 55px;
+  }
+
+  .main_screen__line_right_top, 
+  .main_screen__line_right_bottom {
+    right: 55px;
+  }
+
+  .main_screen__line_top {
+    left: 160px;
+    width: calc(100% - 275px) !important;
   }
 
   .flipped_over_text__grey {
@@ -404,30 +413,59 @@
     line-height: 84px;
   }
 
-  .flipped_over_text {
-    bottom: 178px;
-  }
-
-  .main_screen__line_left {
-    height: 350px;
-    left: -220px;
+  .flipped_over_text__desktop {
+    bottom: 240px !important;
   }
 }
 
-@media screen and (min-width: 840px) {
+@media screen and (max-width: 1000px) {
+  .image_back {
+    left: 175px;
+  }
+
+  .flipped_over_text {
+    animation: flipped_over 1s ease-in-out forwards;
+  }
+  
+  
+  @keyframes flipped_over {
+    0% {
+      left: 287px;
+      width: 0;
+    }
+   
+    100% {
+      left: 23px;
+      /* 27px */
+      width: 518px;
+    }
+  }  
+
+  .prewiew_text,
+  .quote,
+  .btn_to_portfolio {
+    left: 230px;
+    right: auto;
+  }
+}
+
+@media screen and (min-width: 810px) {
   .flipped_over_text__mobile {
     display: none;
   }
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 810px) {
   .flipped_over_text__desktop {
     display: none;
   }
   .main_screen {
-    height: 720px;
+    height: 660px;
     margin-left: 0;
     margin-right: 0;
+
+    padding-left: 35px;
+    padding-right: 35px;
   }
 
   .icons_social_media {
@@ -456,8 +494,10 @@
   .image_back {
     right: 0;
     left: auto;
+    top: 0;
     width: 236px;
-    height: 610px;
+    height: 513px;
+    animation: none;
     background-position: -20px;
   }
 
@@ -467,19 +507,30 @@
     font-weight: 400;
     font-size: 17px;
     line-height: 120%;
+    max-width: 337px !important;
+    width: 337px !important;
+    top: 540px;
   }
-
 
   
   .btn_to_portfolio {
     left: 22px;
-    top: 660px;
+    top: 610px;
 
     width: 227px;
     height: 45px;
     font-weight: 400;
     font-size: 18px;
     line-height: 25px;
+  }
+
+  @keyframes btn_to_portfolio_animatoin {
+    0% {
+      width: 0px;
+    }
+    100% {
+      width: 227px;
+    }
   }
 
   .prewiew_text {
@@ -501,9 +552,25 @@
 
   .flipped_over_text {
     left: auto;
-    right: -80px;
+    right: -180px;
     bottom: 416px;
   }
+  
+  @keyframes flipped_over {
+    0% {
+      left: auto;
+      right: 10px;
+      width: 0;
+    }
+   
+    100% {
+      left: auto;
+      right: -139px;
+      bottom: 360px;
+      width: 518px;
+    }
+  }
+  
 
   .flipped_over_text__grey {
     font-weight: 500;
